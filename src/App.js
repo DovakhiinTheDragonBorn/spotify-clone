@@ -28,18 +28,18 @@ function App() {
                user: user,
             });
          });
-      }
-      // console.log("USER 👨‍🦰", user);
-      // console.log("TOKEN 👉", token);
 
-      spotify.getUserPlaylists().then((playlists) => {
-         dispatch({
-            type: "SET_PLAYLISTS",
-            playlists: playlists,
+         spotify.getUserPlaylists().then((playlists) => {
+            dispatch({
+               type: "SET_PLAYLISTS",
+               playlists: playlists,
+            });
          });
-      });
+      }
+      console.log("USER 👨‍🦰", user);
+      console.log("TOKEN 👉", token);
 
-      console.log(playlists);
+      console.log("🎶🎶🎶🎶🎶", playlists);
    });
 
    return <div className="app">{token ? <Player spotify={spotify} /> : <Login />}</div>;

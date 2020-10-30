@@ -1,10 +1,49 @@
 import React from "react";
 import "./Footer.css";
+import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
+import SkipNextIcon from "@material-ui/icons/SkipNext";
+import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
+import ShuffleIcon from "@material-ui/icons/Shuffle";
+import RepeatIcon from "@material-ui/icons/Repeat";
+import { Grid, Slider } from "@material-ui/core";
+import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
+import VolumeDownIcon from "@material-ui/icons/VolumeDown";
+import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 
 function Footer() {
    return (
       <div className="footer">
-         <h1>I am the footer</h1>
+         <div className="footer__left">
+            <img
+               className="footer__albumLogo"
+               src="https://t2.genius.com/unsafe/220x0/https%3A%2F%2Fimages.genius.com%2F289a05fcbb77ebd0aecd2b221a613fe2.1000x1000x1.png"
+               alt=""
+            />
+            <div className="footer__songInfo">
+               <h4>1985</h4>
+               <p>J. Cole</p>
+            </div>
+         </div>
+         <div className="footer__center">
+            <ShuffleIcon className="footer__green" />
+            <SkipPreviousIcon className="footer__icon" />
+            <PlayCircleOutlineIcon fontSize="large" className="footer__icon" />
+            <SkipNextIcon className="footer__icon" />
+            <RepeatIcon className="footer__green" />
+         </div>
+         <div className="footer__right">
+            <Grid container spacing={2}>
+               <Grid item>
+                  <PlaylistPlayIcon />
+               </Grid>
+               <Grid item>
+                  <VolumeDownIcon />
+               </Grid>
+               <Grid item xs>
+                  <Slider />
+               </Grid>
+            </Grid>
+         </div>
       </div>
    );
 }
